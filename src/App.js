@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import { getFeaturedEvents } from "./dummy-data";
+import EventList from "./components/events/event-list";
 
-function App() {
+const HomePage = () => {
+  const featuredEvents = getFeaturedEvents();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <EventList items={featuredEvents} />
+    </>
   );
-}
+};
 
-export default App;
+export default HomePage;
